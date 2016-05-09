@@ -1,6 +1,6 @@
-import flatten from '../src/flatten';
+import {flatten} from '../src/array';
 
-describe('flatten', () => {
+describe('Array.flatten', () => {
   describe('given no arguments', () => {
     it('should return []', () =>
       expect(flatten()).to.eql([]));
