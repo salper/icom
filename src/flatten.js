@@ -1,27 +1,11 @@
 /**
- * Flatten provided array of [arrays of] integers.
+ * Recursively flattens provided array.
  *
- * No defensive programming here:
- * - xs is expected to be an array
- * - x is expected to be an integer or an array of integers
- *
- * @param {Number[]} xs
- * @returns {Numbers[]}
+ * @param {*[]} xs
+ * @returns {*[]}
  */
-
-// Fully recursive.
-const flatten1 = ([x, ...xs] = []) => {
-  if (typeof x === 'undefined')
-    return [];
-
-  return Array.isArray(x)
-    ? [...flatten1(x), ...flatten1(xs)]
-    : [x, ...flatten1(xs)];
-};
-
-// Built in reducer.
-const flatten2 = (xs = []) =>
+const flatten = (xs = []) =>
   xs.reduce((ys, x) =>
-    Array.isArray(x) ? [...ys, ...flatten2(x)] : [...ys, x], []);
+    Array.isArray(x) ? [...ys, ...flatten(x)] : [...ys, x], []);
 
-export default flatten2;
+export default flatten;
