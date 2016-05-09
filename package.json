@@ -6,7 +6,9 @@
   "engines": {
     "node": ">=6"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-cli": "^6.8.0"
+  },
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.8.0",
@@ -15,6 +17,7 @@
     "mocha": "^2.4.5"
   },
   "scripts": {
+    "invite": "babel-node bin/invite.js",
     "test": "mocha --compilers js:babel-register --recursive test"
   },
   "repository": {
